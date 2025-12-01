@@ -127,6 +127,8 @@ public class Wordle {
                 for(int i=0;i<guess.length();i++){
                     if(guess.charAt(i)<='z'&&guess.charAt(i)>='a'){
                         tmp+=(char)(guess.charAt(i)-32);
+                    }else if(guess.charAt(i)<='Z'&&guess.charAt(i)>='A'){
+                        tmp+=guess.charAt(i);
                     }
                 }
                 guess=tmp;
