@@ -69,11 +69,11 @@ public class Wordle {
         for (int row = 0; row <= currentRow; row++) {
             System.out.print("Guess " + (row + 1) + ": ");
             for (int i = 0; i < guesses[row].length; i++) {
-                System.out.print(guesses[row][i]+" ");
+                System.out.print(guesses[row][i]);
             }
             System.out.print("   Result: ");
             for (int j = 0; j < results[row].length; j++) {
-                System.out.print(results[row][j]+" ");
+                System.out.print(results[row][j]);
             }
             System.out.println();
         }
@@ -123,20 +123,21 @@ public class Wordle {
             while (!valid) {
                 System.out.print("Enter your guess (5-letter word): ");
                 guess = inp.readLine(); 
-                String tmp="";
-                for(int i=0;i<guess.length();i++){
-                    if(guess.charAt(i)<='z'&&guess.charAt(i)>='a'){
-                        tmp+=(char)(guess.charAt(i)-32);
-                    }else if(guess.charAt(i)<='Z'&&guess.charAt(i)>='A'){
-                        tmp+=guess.charAt(i);
-                    }
-                }
-                guess=tmp;
-                if (guess.length() != WORD_LENGTH) {
+                if (guess == null || guess.length() != WORD_LENGTH) {
                     System.out.println("Invalid word. Please try again.");
                 } else {
+                    String tmp="";
+                    for(int i=0;i<guess.length();i++){
+                        if(guess.charAt(i)<='z'&&guess.charAt(i)>='a'){
+                            tmp+=(char)(guess.charAt(i)-32);
+                        }else if(guess.charAt(i)<='Z'&&guess.charAt(i)>='A'){
+                            tmp+=guess.charAt(i);
+                        }
+                    }
+                    guess=tmp;
                     valid = true;
                 }
+                
             }
 
             // Store guess and compute feedback
@@ -157,7 +158,7 @@ public class Wordle {
 
         if (!won) {
             // ... follow the assignment examples for how the printing should look like
-            System.out.println("Sorry, you did not guess the word.\n The secret word was: "+ secret);
+            System.out.println("Sorry, you did not guess the word.\nThe secret word was: "+ secret);
             
         }
 
