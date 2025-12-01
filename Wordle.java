@@ -122,7 +122,7 @@ public class Wordle {
             // Loop until you read a valid guess
             while (!valid) {
                 System.out.print("Enter your guess (5-letter word): ");
-                guess = System.console().readLine();
+                guess = inp.readLine(); 
                 String tmp="";
                 for(int i=0;i<guess.length();i++){
                     if(guess.charAt(i)<='z'&&guess.charAt(i)>='a'){
