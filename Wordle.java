@@ -1,3 +1,10 @@
+/**
+Feedback
+- containsChar - think about how we could have used indexOf
+- isAllGreen - using a boolean variable is good when we need to keep track of the boolean value that might change. 
+In the 'isAllGreen' -> it is enough to get 'False' once and we can return.
+**/
+
 public class Wordle {
 
     // Reads all words from dictionary filename into a String array.
